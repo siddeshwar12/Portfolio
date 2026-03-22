@@ -387,10 +387,9 @@ body.hov #cur2{width:44px;height:44px;border-color:rgba(240,192,96,.8)}
 
   /* HUD */
   #hud{padding:1rem 1.2rem}
-  .hud-logo{font-size:.95rem}
+  .hud-logo{font-size:1.05rem}
   .hud-center{display:none}
   .hud-right{display:none}
-  .hud-link{font-size:.55rem;letter-spacing:.1em;cursor:pointer}
 
   /* Panel — full screen on mobile */
   #panel{width:100vw;box-shadow:none}
@@ -399,40 +398,86 @@ body.hov #cur2{width:44px;height:44px;border-color:rgba(240,192,96,.8)}
     top:0;bottom:0;border-radius:0;
   }
 
-  /* Panel content sizing */
-  .p-hero{min-height:140px;padding:2rem 1.4rem 1.2rem}
-  .p-title{font-size:1.8rem}
-  .p-body{padding:0 1.4rem 2.5rem}
-  .p-close{top:1rem;right:1rem;width:44px;height:44px;cursor:pointer}
-  .stat-n{font-size:1.6rem}
-  .stats{grid-template-columns:1fr 1fr;gap:.5rem}
-  .proj{padding:1rem}
-  .clink{padding:.85rem 1rem;cursor:pointer}
-  .cta{cursor:pointer}
+  /* Panel hero */
+  .p-hero{min-height:160px;padding:2.2rem 1.6rem 1.4rem}
+  .p-title{font-size:2rem}
+  .p-tag{font-size:.65rem;letter-spacing:.22em}
+  .p-icon{font-size:4rem}
+
+  /* Panel body — bigger text, more padding */
+  .p-body{padding:0 1.6rem 3rem}
+  .p-lbl{font-size:.68rem;letter-spacing:.2em;margin-bottom:1rem}
+  .p-txt{font-size:1rem;line-height:1.85}
+
+  /* Close button — large tap target */
+  .p-close{top:1rem;right:1rem;width:48px;height:48px;font-size:1.1rem;cursor:pointer}
+
+  /* Stats grid */
+  .stat-n{font-size:1.9rem}
+  .stat-l{font-size:.75rem}
+  .stats{grid-template-columns:1fr 1fr;gap:.65rem;margin-top:1rem}
+  .stat{padding:1.2rem}
+
+  /* Chips */
+  .chip{font-size:.75rem;padding:.35rem 1rem}
+
+  /* Project cards */
+  .proj{padding:1.2rem}
+  .proj-name{font-size:1.1rem}
+  .proj-desc{font-size:.88rem;line-height:1.75}
+  .sk{font-size:.72rem;padding:.2rem .65rem}
+
+  /* Skill bars */
+  .sk-top{font-size:.82rem}
+  .sk-track{height:5px}
+
+  /* Timeline */
+  .tl-yr{font-size:.68rem;letter-spacing:.16em}
+  .tl-role{font-size:1.05rem}
+  .tl-org{font-size:.82rem}
+  .tl-desc{font-size:.88rem;line-height:1.8}
+
+  /* Contact links */
+  .clink{padding:1rem 1.2rem;cursor:pointer}
+  .clink-l{font-size:.65rem}
+  .clink-v{font-size:.95rem}
+  .clink-ico{width:44px;height:44px;font-size:1.3rem}
+
+  /* CTA button */
+  .cta{font-size:.82rem;padding:.85rem 1.8rem;cursor:pointer}
+
+  /* Cert cards */
   .cert-card{cursor:pointer}
-  .lb-btn,.lb-close{cursor:pointer;min-width:44px;min-height:44px}
-  .mob-btn{cursor:pointer;min-height:44px;padding:.5rem .7rem}
+  .cert-card-name{font-size:1.1rem}
+  .cert-card-course{font-size:.82rem}
+  .cert-card-footer{font-size:.68rem}
+
+  /* Lightbox */
+  #cert-lightbox-img{max-width:96vw;max-height:70vh}
+  .lb-label{min-width:unset;font-size:.7rem}
+  .lb-controls{gap:.8rem}
+  .lb-btn,.lb-close{cursor:pointer;min-width:48px;min-height:48px;font-size:1.3rem}
+
+  /* Contact form */
+  .cf-input{font-size:16px;padding:.85rem 1rem} /* 16px prevents iOS zoom */
+  .cf-btn{min-height:52px;font-size:.88rem}
+  .cf-label{font-size:.68rem}
+
+  /* Mobile nav buttons */
+  .mob-btn{
+    font-size:.65rem;letter-spacing:.12em;
+    cursor:pointer;min-height:44px;padding:.5rem .8rem;
+  }
 
   /* Rotate indicator */
   #rotate-indicator{bottom:5.5rem}
-  .ri-text{font-size:.45rem}
+  .ri-text{font-size:.58rem;letter-spacing:.2em}
 
   /* Loader */
-  .ld-logo{font-size:2rem}
-
-  /* Cert lightbox on mobile */
-  #cert-lightbox-img{max-width:96vw;max-height:70vh}
-  .lb-label{min-width:unset;font-size:.58rem}
-  .lb-controls{gap:.8rem}
-
-  /* Contact form touch targets */
-  .cf-input{font-size:16px} /* prevent iOS zoom on focus */
-  .cf-btn{min-height:48px}
-}
-
-@media(max-width:640px){
-  .hud-right{display:none}
-  #mob-nav{display:flex}
+  .ld-logo{font-size:2.2rem}
+  .ld-sub{font-size:.65rem}
+  .ld-msg{font-size:.7rem}
+  .ld-pct{font-size:.65rem}
 }
 
 /* Mobile nav button (shown only on small screens) */
@@ -440,21 +485,22 @@ body.hov #cur2{width:44px;height:44px;border-color:rgba(240,192,96,.8)}
   display:none;
   position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);
   z-index:300;
-  gap:.6rem;
-  background:rgba(13,10,5,.88);
-  border:1px solid rgba(240,192,96,.25);
+  gap:.4rem;
+  background:rgba(13,10,5,.92);
+  border:1px solid rgba(240,192,96,.3);
   border-radius:100px;
-  padding:.55rem 1.2rem;
+  padding:.6rem 1rem;
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
   pointer-events:all;
 }
 .mob-btn{
-  font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;
-  color:rgba(255,255,255,.5);background:none;border:none;
-  cursor:pointer;padding:.3rem .5rem;
+  font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(255,255,255,.6);background:none;border:none;
+  cursor:pointer;padding:.4rem .65rem;
   font-family:'DM Mono',monospace;
   transition:color .2s;
+  min-height:44px;
 }
 .mob-btn:hover,.mob-btn:active{color:#f0c060}
 
@@ -467,19 +513,6 @@ body.hov #cur2{width:44px;height:44px;border-color:rgba(240,192,96,.8)}
   color:rgba(255,255,255,.22);
   white-space:nowrap;
   animation:hudIn 1s 3.5s ease both;
-}
-@media(hover:none) and (pointer:coarse){
-  #mob-nav{display:flex}
-  #touch-hint{display:block}
-  #cur,#cur2{display:none}
-  body{cursor:auto}
-  .hud-right{display:none}
-  #rotate-indicator .ri-text::after{content:' · swipe to look'}
-  /* Make all interactive elements tappable */
-  .p-close,.clink,.cta,.cert-card,.lb-btn,.lb-close,.mob-btn,.hud-link,
-  .proj,.chip,.stat{cursor:pointer;-webkit-tap-highlight-color:rgba(240,192,96,0.18)}
-  /* Prevent double-tap zoom on buttons */
-  button,a{touch-action:manipulation}
 }
 /* Safe area insets for iPhone notch / home bar */
 #hud{padding-top:max(1.6rem, env(safe-area-inset-top))}
@@ -635,6 +668,47 @@ body.hov #cur2{width:44px;height:44px;border-color:rgba(240,192,96,.8)}
   transition:background 0.18s;
 }
 .lb-close:hover{ background:rgba(220,60,60,0.55); }
+
+/* ══════════════════════════════════════════════
+   MOBILE — RESUME LIGHTBOX & EXTRA FIXES
+══════════════════════════════════════════════ */
+@media(max-width:640px){
+  /* Resume lightbox page — bigger text, comfortable padding */
+  #resume-full-page{
+    padding:1.8rem 1.4rem 2rem !important;
+  }
+  #resume-full-page h1{font-size:1.4rem !important}
+  #resume-full-page h2{font-size:.88rem !important}
+  #resume-full-page p,
+  #resume-full-page li,
+  #resume-full-page td{font-size:.85rem !important;line-height:1.85 !important}
+  #resume-full-page strong{font-size:.85rem !important}
+  #resume-full-page table td:first-child{width:42% !important;font-size:.82rem !important}
+
+  /* Touch hint */
+  #touch-hint{font-size:.6rem;letter-spacing:.16em}
+
+  /* Divider spacing */
+  .p-div{margin:1.2rem 0}
+  .p-sec{margin-bottom:1.6rem}
+}
+
+/* Touch devices — bigger tap targets everywhere */
+@media(hover:none) and (pointer:coarse){
+  #mob-nav{display:flex}
+  #touch-hint{display:block}
+  #cur,#cur2{display:none}
+  body{cursor:auto}
+  .hud-right{display:none}
+  #rotate-indicator .ri-text::after{content:' · swipe to look'}
+  .p-close,.clink,.cta,.cert-card,.lb-btn,.lb-close,.mob-btn,.hud-link,
+  .proj,.chip,.stat{cursor:pointer;-webkit-tap-highlight-color:rgba(240,192,96,0.18)}
+  button,a{touch-action:manipulation}
+  /* Bigger tap targets for all buttons */
+  .p-close{min-width:48px;min-height:48px}
+  .clink{min-height:56px}
+  .mob-btn{min-height:48px}
+}
 </style>
 </head>
 <body>
