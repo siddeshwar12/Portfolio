@@ -2,6 +2,10 @@
 
 A browser-based interactive portfolio experience built with HTML, CSS, JavaScript, and Three.js.
 
+## Live portfolio
+
+Visit the deployed site: [portfolio-silk-eight-4z6eaqn5ek.vercel.app](https://portfolio-silk-eight-4z6eaqn5ek.vercel.app/)
+
 ## Run locally
 
 No installation is required. Serve the repository with a simple static server:
